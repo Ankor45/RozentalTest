@@ -14,6 +14,15 @@
 		9FA16B822C78E95B00A83CC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA16B802C78E95B00A83CC6 /* LaunchScreen.storyboard */; };
 		9FA16B8A2C78F20300A83CC6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B892C78F20300A83CC6 /* UIColor+Extension.swift */; };
 		9FA16B8C2C78F22200A83CC6 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B8B2C78F22200A83CC6 /* AppColor.swift */; };
+		9FA16B8F2C78F9D900A83CC6 /* networkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B8E2C78F9D900A83CC6 /* networkTest.swift */; };
+		9FA16B932C7A715A00A83CC6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B922C7A715A00A83CC6 /* Coordinator.swift */; };
+		9FA16B952C7A76B800A83CC6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B942C7A76B800A83CC6 /* AppCoordinator.swift */; };
+		9FA16B982C7A7A2100A83CC6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B972C7A7A2100A83CC6 /* TabBarController.swift */; };
+		9FA16B9A2C7A7C4B00A83CC6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B992C7A7C4B00A83CC6 /* MainCoordinator.swift */; };
+		9FA16B9C2C7A7CE500A83CC6 /* RequestsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B9B2C7A7CE500A83CC6 /* RequestsCoordinator.swift */; };
+		9FA16B9E2C7A7CFC00A83CC6 /* ServicesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B9D2C7A7CFC00A83CC6 /* ServicesCoordinator.swift */; };
+		9FA16BA02C7A7D1600A83CC6 /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B9F2C7A7D1600A83CC6 /* ChatCoordinator.swift */; };
+		9FA16BA22C7A7D2A00A83CC6 /* ContactsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BA12C7A7D2A00A83CC6 /* ContactsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		9FA16B832C78E95B00A83CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FA16B892C78F20300A83CC6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		9FA16B8B2C78F22200A83CC6 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		9FA16B8E2C78F9D900A83CC6 /* networkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkTest.swift; sourceTree = "<group>"; };
+		9FA16B922C7A715A00A83CC6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9FA16B942C7A76B800A83CC6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		9FA16B972C7A7A2100A83CC6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9FA16B992C7A7C4B00A83CC6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		9FA16B9B2C7A7CE500A83CC6 /* RequestsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsCoordinator.swift; sourceTree = "<group>"; };
+		9FA16B9D2C7A7CFC00A83CC6 /* ServicesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCoordinator.swift; sourceTree = "<group>"; };
+		9FA16B9F2C7A7D1600A83CC6 /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
+		9FA16BA12C7A7D2A00A83CC6 /* ContactsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +76,12 @@
 		9FA16B742C78E95900A83CC6 /* RozentalTest */ = {
 			isa = PBXGroup;
 			children = (
+				9FA16B902C7A6F7700A83CC6 /* NavigationLayer */,
+				9FA16B8D2C78F35900A83CC6 /* Resourses */,
 				9FA16B752C78E95900A83CC6 /* AppDelegate.swift */,
 				9FA16B772C78E95900A83CC6 /* SceneDelegate.swift */,
 				9FA16B792C78E95900A83CC6 /* ViewController.swift */,
-				9FA16B8D2C78F35900A83CC6 /* Resourses */,
+				9FA16B8E2C78F9D900A83CC6 /* networkTest.swift */,
 				9FA16B7E2C78E95B00A83CC6 /* Assets.xcassets */,
 				9FA16B802C78E95B00A83CC6 /* LaunchScreen.storyboard */,
 				9FA16B832C78E95B00A83CC6 /* Info.plist */,
@@ -76,6 +96,37 @@
 				9FA16B8B2C78F22200A83CC6 /* AppColor.swift */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		9FA16B902C7A6F7700A83CC6 /* NavigationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16B962C7A7A0300A83CC6 /* Controllers */,
+				9FA16B912C7A713D00A83CC6 /* Coordinators */,
+			);
+			path = NavigationLayer;
+			sourceTree = "<group>";
+		};
+		9FA16B912C7A713D00A83CC6 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16B922C7A715A00A83CC6 /* Coordinator.swift */,
+				9FA16B942C7A76B800A83CC6 /* AppCoordinator.swift */,
+				9FA16B992C7A7C4B00A83CC6 /* MainCoordinator.swift */,
+				9FA16B9B2C7A7CE500A83CC6 /* RequestsCoordinator.swift */,
+				9FA16B9D2C7A7CFC00A83CC6 /* ServicesCoordinator.swift */,
+				9FA16B9F2C7A7D1600A83CC6 /* ChatCoordinator.swift */,
+				9FA16BA12C7A7D2A00A83CC6 /* ContactsCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		9FA16B962C7A7A0300A83CC6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16B972C7A7A2100A83CC6 /* TabBarController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +201,18 @@
 			files = (
 				9FA16B7A2C78E95900A83CC6 /* ViewController.swift in Sources */,
 				9FA16B8C2C78F22200A83CC6 /* AppColor.swift in Sources */,
+				9FA16B9C2C7A7CE500A83CC6 /* RequestsCoordinator.swift in Sources */,
+				9FA16BA22C7A7D2A00A83CC6 /* ContactsCoordinator.swift in Sources */,
 				9FA16B762C78E95900A83CC6 /* AppDelegate.swift in Sources */,
+				9FA16B9A2C7A7C4B00A83CC6 /* MainCoordinator.swift in Sources */,
+				9FA16B982C7A7A2100A83CC6 /* TabBarController.swift in Sources */,
 				9FA16B782C78E95900A83CC6 /* SceneDelegate.swift in Sources */,
+				9FA16B952C7A76B800A83CC6 /* AppCoordinator.swift in Sources */,
+				9FA16B9E2C7A7CFC00A83CC6 /* ServicesCoordinator.swift in Sources */,
+				9FA16B8F2C78F9D900A83CC6 /* networkTest.swift in Sources */,
 				9FA16B8A2C78F20300A83CC6 /* UIColor+Extension.swift in Sources */,
+				9FA16B932C7A715A00A83CC6 /* Coordinator.swift in Sources */,
+				9FA16BA02C7A7D1600A83CC6 /* ChatCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
