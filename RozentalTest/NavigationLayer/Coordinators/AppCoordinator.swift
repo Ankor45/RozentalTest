@@ -10,7 +10,8 @@ import UIKit
 class AppCoordinator: Coordinator {
     
     override func start() {
-        showMainFlow()
+        showAuthFlow()
+//        showMainFlow()
     }
     
 }
@@ -62,6 +63,12 @@ private extension AppCoordinator {
         
         navigationController.pushViewController(tabBarController, animated: true)
     }
+    
+    func showAuthFlow() {
+        guard let navigationController = navigationController else { return }
+        let loginCoordinator = LoginCoordinator(typs: .login, navigationController: navigationController)
+        loginCoordinator.start()
+    }
 }
 // MARK: - FinishDelegate
 extension AppCoordinator: CoordinatorFinishDelegate {
@@ -69,8 +76,11 @@ extension AppCoordinator: CoordinatorFinishDelegate {
         removeChildCoordinator(childCoordinator)
         
         switch childCoordinator.type {
-        case.app:
+        case .app:
             return
+        case .login:
+            showMainFlow()
+            navigationController?.viewControllers = [navigationController?.viewControllers.last ?? UIViewController()]
         default:
             navigationController?.popViewController(animated: false)
         }

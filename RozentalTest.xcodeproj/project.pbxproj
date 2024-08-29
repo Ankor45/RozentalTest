@@ -23,6 +23,11 @@
 		9FA16B9E2C7A7CFC00A83CC6 /* ServicesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B9D2C7A7CFC00A83CC6 /* ServicesCoordinator.swift */; };
 		9FA16BA02C7A7D1600A83CC6 /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B9F2C7A7D1600A83CC6 /* ChatCoordinator.swift */; };
 		9FA16BA22C7A7D2A00A83CC6 /* ContactsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BA12C7A7D2A00A83CC6 /* ContactsCoordinator.swift */; };
+		9FA16BA62C7F735100A83CC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BA52C7F735100A83CC6 /* LoginViewController.swift */; };
+		9FA16BAA2C7F796400A83CC6 /* RozentalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BA92C7F796400A83CC6 /* RozentalButton.swift */; };
+		9FA16BAC2C7F87B500A83CC6 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BAB2C7F87B500A83CC6 /* LoginCoordinator.swift */; };
+		9FA16BAE2C80C18E00A83CC6 /* RozentalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BAD2C80C18D00A83CC6 /* RozentalTextField.swift */; };
+		9FA16BB12C811F1B00A83CC6 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BB02C811F1B00A83CC6 /* LoginPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		9FA16B9D2C7A7CFC00A83CC6 /* ServicesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCoordinator.swift; sourceTree = "<group>"; };
 		9FA16B9F2C7A7D1600A83CC6 /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
 		9FA16BA12C7A7D2A00A83CC6 /* ContactsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCoordinator.swift; sourceTree = "<group>"; };
+		9FA16BA52C7F735100A83CC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9FA16BA92C7F796400A83CC6 /* RozentalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozentalButton.swift; sourceTree = "<group>"; };
+		9FA16BAB2C7F87B500A83CC6 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		9FA16BAD2C80C18D00A83CC6 /* RozentalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozentalTextField.swift; sourceTree = "<group>"; };
+		9FA16BB02C811F1B00A83CC6 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,7 @@
 		9FA16B742C78E95900A83CC6 /* RozentalTest */ = {
 			isa = PBXGroup;
 			children = (
+				9FA16BA32C7F72F400A83CC6 /* UILayer */,
 				9FA16B902C7A6F7700A83CC6 /* NavigationLayer */,
 				9FA16B8D2C78F35900A83CC6 /* Resourses */,
 				9FA16B752C78E95900A83CC6 /* AppDelegate.swift */,
@@ -112,6 +123,7 @@
 			children = (
 				9FA16B922C7A715A00A83CC6 /* Coordinator.swift */,
 				9FA16B942C7A76B800A83CC6 /* AppCoordinator.swift */,
+				9FA16BAB2C7F87B500A83CC6 /* LoginCoordinator.swift */,
 				9FA16B992C7A7C4B00A83CC6 /* MainCoordinator.swift */,
 				9FA16B9B2C7A7CE500A83CC6 /* RequestsCoordinator.swift */,
 				9FA16B9D2C7A7CFC00A83CC6 /* ServicesCoordinator.swift */,
@@ -127,6 +139,49 @@
 				9FA16B972C7A7A2100A83CC6 /* TabBarController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9FA16BA32C7F72F400A83CC6 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16BA42C7F730700A83CC6 /* AuthScene */,
+				9FA16BA82C7F789E00A83CC6 /* Views */,
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
+		9FA16BA42C7F730700A83CC6 /* AuthScene */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16BAF2C811EFB00A83CC6 /* Presenter */,
+				9FA16BA72C7F788B00A83CC6 /* Controllers */,
+			);
+			path = AuthScene;
+			sourceTree = "<group>";
+		};
+		9FA16BA72C7F788B00A83CC6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16BA52C7F735100A83CC6 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9FA16BA82C7F789E00A83CC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16BA92C7F796400A83CC6 /* RozentalButton.swift */,
+				9FA16BAD2C80C18D00A83CC6 /* RozentalTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9FA16BAF2C811EFB00A83CC6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16BB02C811F1B00A83CC6 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,15 +254,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA16BAC2C7F87B500A83CC6 /* LoginCoordinator.swift in Sources */,
 				9FA16B7A2C78E95900A83CC6 /* ViewController.swift in Sources */,
+				9FA16BAE2C80C18E00A83CC6 /* RozentalTextField.swift in Sources */,
 				9FA16B8C2C78F22200A83CC6 /* AppColor.swift in Sources */,
+				9FA16BB12C811F1B00A83CC6 /* LoginPresenter.swift in Sources */,
 				9FA16B9C2C7A7CE500A83CC6 /* RequestsCoordinator.swift in Sources */,
+				9FA16BA62C7F735100A83CC6 /* LoginViewController.swift in Sources */,
 				9FA16BA22C7A7D2A00A83CC6 /* ContactsCoordinator.swift in Sources */,
 				9FA16B762C78E95900A83CC6 /* AppDelegate.swift in Sources */,
 				9FA16B9A2C7A7C4B00A83CC6 /* MainCoordinator.swift in Sources */,
 				9FA16B982C7A7A2100A83CC6 /* TabBarController.swift in Sources */,
 				9FA16B782C78E95900A83CC6 /* SceneDelegate.swift in Sources */,
 				9FA16B952C7A76B800A83CC6 /* AppCoordinator.swift in Sources */,
+				9FA16BAA2C7F796400A83CC6 /* RozentalButton.swift in Sources */,
 				9FA16B9E2C7A7CFC00A83CC6 /* ServicesCoordinator.swift in Sources */,
 				9FA16B8F2C78F9D900A83CC6 /* networkTest.swift in Sources */,
 				9FA16B8A2C78F20300A83CC6 /* UIColor+Extension.swift in Sources */,
@@ -361,8 +421,8 @@
 				INFOPLIST_FILE = RozentalTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -393,8 +453,8 @@
 				INFOPLIST_FILE = RozentalTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
