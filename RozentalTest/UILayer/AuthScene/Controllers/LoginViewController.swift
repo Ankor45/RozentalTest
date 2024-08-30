@@ -83,6 +83,15 @@ extension LoginViewController {
                                              action: #selector(navigationController?.popViewController(animated:)))
         navigationItem.leftBarButtonItem = backButtonItem
         navigationItem.leftBarButtonItem?.tintColor = AppColors.black
+        
+        let fogetPassButtonItem = UIBarButtonItem(
+            title: "Забыли пароль?",
+            style: .plain,
+            target: .none,
+            action: .none
+        )
+        navigationItem.rightBarButtonItem = fogetPassButtonItem
+        navigationItem.rightBarButtonItem?.tintColor = AppColors.gray
     }
     func setupLogoImage() {
         view.addSubview(logoImage)

@@ -12,6 +12,12 @@ class LoginCoordinator: Coordinator {
     override func start() {
         showAuthScene()
     }
+    
+    override func finish() {
+        print("LoginCoordinator finish")
+        finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+       
+    }
 }
 
 extension LoginCoordinator {

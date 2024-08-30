@@ -7,7 +7,9 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
+class AppCoordinator: Coordinator, TabBarCoordinator {
+    
+    var tabBarController: UITabBarController?
     
     override func start() {
         showAuthFlow()
@@ -19,7 +21,6 @@ class AppCoordinator: Coordinator {
 // MARK: - Navigation methods
 private extension AppCoordinator {
     func showMainFlow() {
-        guard let navigationController = navigationController else { return }
         
         let mainNavigatorController = UINavigationController()
         let mainCoordinator = MainCoordinator(typs: .main, navigationController: mainNavigatorController)
@@ -61,12 +62,18 @@ private extension AppCoordinator {
         let tabBarControllers = [mainNavigatorController, requestsNavigatorController, servicesNavigatorController, chatNavigatorController, contactsNavigatorController]
         let tabBarController = TabBarController(tabBarControllers: tabBarControllers)
         
-        navigationController.pushViewController(tabBarController, animated: true)
+        self.tabBarController = tabBarController
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = .fade
+        self.window?.layer.add(transition, forKey: kCATransition)
+        self.window?.rootViewController = self.tabBarController
+
     }
     
     func showAuthFlow() {
         guard let navigationController = navigationController else { return }
-        let loginCoordinator = LoginCoordinator(typs: .login, navigationController: navigationController)
+        let loginCoordinator = LoginCoordinator(typs: .login, navigationController: navigationController,finishDelegate: self)
         loginCoordinator.start()
     }
 }
@@ -74,13 +81,15 @@ private extension AppCoordinator {
 extension AppCoordinator: CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: CoordinatorProtocol) {
         removeChildCoordinator(childCoordinator)
-        
+
         switch childCoordinator.type {
+        case .login:
+          
+            showMainFlow()
+            
+            navigationController?.viewControllers = [navigationController?.viewControllers.last ?? UIViewController()]
         case .app:
             return
-        case .login:
-            showMainFlow()
-            navigationController?.viewControllers = [navigationController?.viewControllers.last ?? UIViewController()]
         default:
             navigationController?.popViewController(animated: false)
         }

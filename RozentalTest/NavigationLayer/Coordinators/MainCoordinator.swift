@@ -10,11 +10,18 @@ import UIKit
 class MainCoordinator: Coordinator {
     
     override func start() {
-        let vc = ViewController()
-        vc.view.backgroundColor = .red
-        navigationController?.pushViewController(vc, animated: true)
+        showMainScene()
     }
+    
     override func finish() {
         print("MainCoordinator finish")
+    }
+}
+
+extension MainCoordinator {
+    func showMainScene() {
+        guard let navigationController = navigationController else { return }
+        let controller = ViewController()
+        navigationController.pushViewController(controller, animated: true)
     }
 }

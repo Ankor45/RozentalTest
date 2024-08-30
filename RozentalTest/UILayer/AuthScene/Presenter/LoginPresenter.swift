@@ -22,13 +22,20 @@ class LoginPresenter {
     }
 }
 
+private extension LoginPresenter {
+    func goToMainScreen() {
+        coordinator?.finish()
+    }
+}
+
 extension LoginPresenter: LoginViewOutput {
     func loginStart() {
         viewInput?.startLoader()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            print("Wrong email or password")
-            self.viewInput?.stopLoader()
+            self.goToMainScreen()
+           
         }
+       
     }
     
     func goToSignIn() {
