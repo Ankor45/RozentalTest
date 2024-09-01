@@ -36,13 +36,12 @@ class RozentalButton: UIButton {
         setupButton()
     }
     
-    func setupButton() {
+    private func setupButton() {
         addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        
+        button.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             button.bottomAnchor.constraint(equalTo: self.bottomAnchor),

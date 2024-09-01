@@ -21,7 +21,7 @@ class MainCoordinator: Coordinator {
 extension MainCoordinator {
     func showMainScene() {
         guard let navigationController = navigationController else { return }
-        let controller = ViewController()
+        let controller = MainViewController()
         navigationController.pushViewController(controller, animated: true)
     }
 }

@@ -28,6 +28,11 @@
 		9FA16BAC2C7F87B500A83CC6 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BAB2C7F87B500A83CC6 /* LoginCoordinator.swift */; };
 		9FA16BAE2C80C18E00A83CC6 /* RozentalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BAD2C80C18D00A83CC6 /* RozentalTextField.swift */; };
 		9FA16BB12C811F1B00A83CC6 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BB02C811F1B00A83CC6 /* LoginPresenter.swift */; };
+		9FA16BB52C82401A00A83CC6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BB42C82401A00A83CC6 /* MainViewController.swift */; };
+		9FA16BB82C82556400A83CC6 /* NotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BB72C82556400A83CC6 /* NotificationButton.swift */; };
+		9FA16BBA2C8385FD00A83CC6 /* BillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BB92C8385FC00A83CC6 /* BillButton.swift */; };
+		9FA16BBE2C84841900A83CC6 /* ServiceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BBD2C84841900A83CC6 /* ServiceCollectionCell.swift */; };
+		9FA16BC02C84968D00A83CC6 /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BBF2C84968D00A83CC6 /* SquareButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +59,11 @@
 		9FA16BAB2C7F87B500A83CC6 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		9FA16BAD2C80C18D00A83CC6 /* RozentalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozentalTextField.swift; sourceTree = "<group>"; };
 		9FA16BB02C811F1B00A83CC6 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		9FA16BB42C82401A00A83CC6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9FA16BB72C82556400A83CC6 /* NotificationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationButton.swift; sourceTree = "<group>"; };
+		9FA16BB92C8385FC00A83CC6 /* BillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillButton.swift; sourceTree = "<group>"; };
+		9FA16BBD2C84841900A83CC6 /* ServiceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCollectionCell.swift; sourceTree = "<group>"; };
+		9FA16BBF2C84968D00A83CC6 /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +154,7 @@
 		9FA16BA32C7F72F400A83CC6 /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
+				9FA16BB22C823FF900A83CC6 /* MainScene */,
 				9FA16BA42C7F730700A83CC6 /* AuthScene */,
 				9FA16BA82C7F789E00A83CC6 /* Views */,
 			);
@@ -153,6 +164,7 @@
 		9FA16BA42C7F730700A83CC6 /* AuthScene */ = {
 			isa = PBXGroup;
 			children = (
+				9FA16BC12C84A20800A83CC6 /* Views */,
 				9FA16BAF2C811EFB00A83CC6 /* Presenter */,
 				9FA16BA72C7F788B00A83CC6 /* Controllers */,
 			);
@@ -171,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				9FA16BA92C7F796400A83CC6 /* RozentalButton.swift */,
-				9FA16BAD2C80C18D00A83CC6 /* RozentalTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +193,42 @@
 				9FA16BB02C811F1B00A83CC6 /* LoginPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9FA16BB22C823FF900A83CC6 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16BB32C82400800A83CC6 /* Controllers */,
+				9FA16BB62C82552F00A83CC6 /* Views */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		9FA16BB32C82400800A83CC6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16BB42C82401A00A83CC6 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9FA16BB62C82552F00A83CC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16BB72C82556400A83CC6 /* NotificationButton.swift */,
+				9FA16BBD2C84841900A83CC6 /* ServiceCollectionCell.swift */,
+				9FA16BB92C8385FC00A83CC6 /* BillButton.swift */,
+				9FA16BBF2C84968D00A83CC6 /* SquareButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9FA16BC12C84A20800A83CC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16BAD2C80C18D00A83CC6 /* RozentalTextField.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,12 +303,15 @@
 			files = (
 				9FA16BAC2C7F87B500A83CC6 /* LoginCoordinator.swift in Sources */,
 				9FA16B7A2C78E95900A83CC6 /* ViewController.swift in Sources */,
+				9FA16BC02C84968D00A83CC6 /* SquareButton.swift in Sources */,
 				9FA16BAE2C80C18E00A83CC6 /* RozentalTextField.swift in Sources */,
 				9FA16B8C2C78F22200A83CC6 /* AppColor.swift in Sources */,
+				9FA16BBE2C84841900A83CC6 /* ServiceCollectionCell.swift in Sources */,
 				9FA16BB12C811F1B00A83CC6 /* LoginPresenter.swift in Sources */,
 				9FA16B9C2C7A7CE500A83CC6 /* RequestsCoordinator.swift in Sources */,
 				9FA16BA62C7F735100A83CC6 /* LoginViewController.swift in Sources */,
 				9FA16BA22C7A7D2A00A83CC6 /* ContactsCoordinator.swift in Sources */,
+				9FA16BBA2C8385FD00A83CC6 /* BillButton.swift in Sources */,
 				9FA16B762C78E95900A83CC6 /* AppDelegate.swift in Sources */,
 				9FA16B9A2C7A7C4B00A83CC6 /* MainCoordinator.swift in Sources */,
 				9FA16B982C7A7A2100A83CC6 /* TabBarController.swift in Sources */,
@@ -272,7 +322,9 @@
 				9FA16B8F2C78F9D900A83CC6 /* networkTest.swift in Sources */,
 				9FA16B8A2C78F20300A83CC6 /* UIColor+Extension.swift in Sources */,
 				9FA16B932C7A715A00A83CC6 /* Coordinator.swift in Sources */,
+				9FA16BB82C82556400A83CC6 /* NotificationButton.swift in Sources */,
 				9FA16BA02C7A7D1600A83CC6 /* ChatCoordinator.swift in Sources */,
+				9FA16BB52C82401A00A83CC6 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
