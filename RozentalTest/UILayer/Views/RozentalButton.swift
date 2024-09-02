@@ -35,7 +35,6 @@ class RozentalButton: UIButton {
         self.backgroundColor = .clear
         setupButton()
     }
-    
     private func setupButton() {
         addSubview(button)
         button.titleLabel?.font = .boldSystemFont(ofSize: 16)
@@ -50,7 +49,6 @@ class RozentalButton: UIButton {
             button.topAnchor.constraint(equalTo: self.topAnchor)
         ])
     }
-    
     @objc private func buttonPressed() {
         guard let action = self.action else { return }
         action()
@@ -68,7 +66,6 @@ class RozentalButton: UIButton {
             button.setTitleColor(AppColors.black, for: .normal)
         }
     }
-    
     public func setTitle(_ title: String?) {
         button.setTitle(title, for: .normal)
     }

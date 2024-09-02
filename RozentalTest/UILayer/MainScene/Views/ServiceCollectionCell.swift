@@ -20,35 +20,29 @@ class ServiceCollectionCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    // MARK: - Download image
-//    func configure(with projectInfo: (text: String, photoUrl: String)) {
-//        titleLabel.text = projectInfo.text
-//        let stringUrl = projectInfo.photoUrl
-//        
-//       
-//        
-//        guard let imageURL = URL(string: stringUrl) else { return }
-//        
-//        URLSession.shared.dataTask(with: imageURL) { [weak self] data, _, error in
-//            guard let self = self, let data = data, let photo = UIImage(data: data), error == nil else {
-//                print("Error: \(String(describing: error?.localizedDescription))")
-//                return
-//            }
-//            
-//            DispatchQueue.main.async {
-//                self.photoImage.image = photo
-//                self.imageCache.setObject(photo, forKey: stringUrl as AnyObject)
-//            }
-//        }.resume()
-//    }
-    
-    func setupCell() {
+//     MARK: - Download image
+    func configure(text: String, description: String, photoUrl: String) {
+        titleLabel.text = text
+        descriptionLabel.text = description
+        
+        let stringUrl = photoUrl
+        guard let imageURL = URL(string: stringUrl) else { return }
+        URLSession.shared.dataTask(with: imageURL) { [weak self] data, _, error in
+            guard let self = self, let data = data, let photo = UIImage(data: data), error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            DispatchQueue.main.async {
+                self.imageView.image = photo
+            }
+        }.resume()
+    }
+    private func setupCell() {
         setupBacground()
         setupphotoImage()
         setupTitleLabel()
         setupDescriptionLabel()
     }
-    
     private func setupBacground() {
         contentView.backgroundColor = AppColors.white
         contentView.layer.cornerRadius = 12
@@ -60,8 +54,6 @@ class ServiceCollectionCell: UICollectionViewCell {
     // MARK: - Setup UI
     func setupphotoImage() {
         contentView.addSubview(imageView)
-       // imageView.image = UIImage(resource: .utilityIco)
-        imageView.backgroundColor = .green
         imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
         
@@ -76,31 +68,31 @@ class ServiceCollectionCell: UICollectionViewCell {
     }
     func setupTitleLabel() {
         contentView.addSubview(titleLabel)
-        titleLabel.font = .boldSystemFont(ofSize: 16)
-        titleLabel.text = "Title label"
+        titleLabel.font = .boldSystemFont(ofSize: 14)
         titleLabel.numberOfLines = .zero
+        titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.textColor = AppColors.black
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10)
+            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
         ])
     }
-    
     func setupDescriptionLabel() {
         contentView.addSubview(descriptionLabel)
-        descriptionLabel.font = .boldSystemFont(ofSize: 16)
-        descriptionLabel.text = "description label"
+        descriptionLabel.font = .boldSystemFont(ofSize: 12)
         descriptionLabel.numberOfLines = .zero
+        descriptionLabel.adjustsFontSizeToFitWidth = true
         descriptionLabel.textColor = AppColors.gray
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10)
+            descriptionLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
         ])
     }
-    
 }
 

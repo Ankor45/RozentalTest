@@ -14,7 +14,7 @@
 		9FA16B822C78E95B00A83CC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA16B802C78E95B00A83CC6 /* LaunchScreen.storyboard */; };
 		9FA16B8A2C78F20300A83CC6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B892C78F20300A83CC6 /* UIColor+Extension.swift */; };
 		9FA16B8C2C78F22200A83CC6 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B8B2C78F22200A83CC6 /* AppColor.swift */; };
-		9FA16B8F2C78F9D900A83CC6 /* networkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B8E2C78F9D900A83CC6 /* networkTest.swift */; };
+		9FA16B8F2C78F9D900A83CC6 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B8E2C78F9D900A83CC6 /* Network.swift */; };
 		9FA16B932C7A715A00A83CC6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B922C7A715A00A83CC6 /* Coordinator.swift */; };
 		9FA16B952C7A76B800A83CC6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B942C7A76B800A83CC6 /* AppCoordinator.swift */; };
 		9FA16B982C7A7A2100A83CC6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16B972C7A7A2100A83CC6 /* TabBarController.swift */; };
@@ -33,6 +33,8 @@
 		9FA16BBA2C8385FD00A83CC6 /* BillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BB92C8385FC00A83CC6 /* BillButton.swift */; };
 		9FA16BBE2C84841900A83CC6 /* ServiceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BBD2C84841900A83CC6 /* ServiceCollectionCell.swift */; };
 		9FA16BC02C84968D00A83CC6 /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BBF2C84968D00A83CC6 /* SquareButton.swift */; };
+		9FA16BE62C84E20900A83CC6 /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BE52C84E20900A83CC6 /* ServerModel.swift */; };
+		9FA16BEC2C851B7500A83CC6 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA16BEB2C851B7500A83CC6 /* UserStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +47,7 @@
 		9FA16B832C78E95B00A83CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FA16B892C78F20300A83CC6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		9FA16B8B2C78F22200A83CC6 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		9FA16B8E2C78F9D900A83CC6 /* networkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkTest.swift; sourceTree = "<group>"; };
+		9FA16B8E2C78F9D900A83CC6 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		9FA16B922C7A715A00A83CC6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9FA16B942C7A76B800A83CC6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9FA16B972C7A7A2100A83CC6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,8 @@
 		9FA16BB92C8385FC00A83CC6 /* BillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillButton.swift; sourceTree = "<group>"; };
 		9FA16BBD2C84841900A83CC6 /* ServiceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCollectionCell.swift; sourceTree = "<group>"; };
 		9FA16BBF2C84968D00A83CC6 /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
+		9FA16BE52C84E20900A83CC6 /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
+		9FA16BEB2C851B7500A83CC6 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,13 +100,14 @@
 		9FA16B742C78E95900A83CC6 /* RozentalTest */ = {
 			isa = PBXGroup;
 			children = (
+				9FA16BEA2C851B5C00A83CC6 /* ServicesLayer */,
 				9FA16BA32C7F72F400A83CC6 /* UILayer */,
 				9FA16B902C7A6F7700A83CC6 /* NavigationLayer */,
 				9FA16B8D2C78F35900A83CC6 /* Resourses */,
+				9FA16BE42C84E1E400A83CC6 /* NetworkLayer */,
 				9FA16B752C78E95900A83CC6 /* AppDelegate.swift */,
 				9FA16B772C78E95900A83CC6 /* SceneDelegate.swift */,
 				9FA16B792C78E95900A83CC6 /* ViewController.swift */,
-				9FA16B8E2C78F9D900A83CC6 /* networkTest.swift */,
 				9FA16B7E2C78E95B00A83CC6 /* Assets.xcassets */,
 				9FA16B802C78E95B00A83CC6 /* LaunchScreen.storyboard */,
 				9FA16B832C78E95B00A83CC6 /* Info.plist */,
@@ -231,6 +236,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9FA16BE42C84E1E400A83CC6 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16B8E2C78F9D900A83CC6 /* Network.swift */,
+				9FA16BE52C84E20900A83CC6 /* ServerModel.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		9FA16BEA2C851B5C00A83CC6 /* ServicesLayer */ = {
+			isa = PBXGroup;
+			children = (
+				9FA16BEB2C851B7500A83CC6 /* UserStorage.swift */,
+			);
+			path = ServicesLayer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -313,13 +335,15 @@
 				9FA16BA22C7A7D2A00A83CC6 /* ContactsCoordinator.swift in Sources */,
 				9FA16BBA2C8385FD00A83CC6 /* BillButton.swift in Sources */,
 				9FA16B762C78E95900A83CC6 /* AppDelegate.swift in Sources */,
+				9FA16BE62C84E20900A83CC6 /* ServerModel.swift in Sources */,
 				9FA16B9A2C7A7C4B00A83CC6 /* MainCoordinator.swift in Sources */,
+				9FA16BEC2C851B7500A83CC6 /* UserStorage.swift in Sources */,
 				9FA16B982C7A7A2100A83CC6 /* TabBarController.swift in Sources */,
 				9FA16B782C78E95900A83CC6 /* SceneDelegate.swift in Sources */,
 				9FA16B952C7A76B800A83CC6 /* AppCoordinator.swift in Sources */,
 				9FA16BAA2C7F796400A83CC6 /* RozentalButton.swift in Sources */,
 				9FA16B9E2C7A7CFC00A83CC6 /* ServicesCoordinator.swift in Sources */,
-				9FA16B8F2C78F9D900A83CC6 /* networkTest.swift in Sources */,
+				9FA16B8F2C78F9D900A83CC6 /* Network.swift in Sources */,
 				9FA16B8A2C78F20300A83CC6 /* UIColor+Extension.swift in Sources */,
 				9FA16B932C7A715A00A83CC6 /* Coordinator.swift in Sources */,
 				9FA16BB82C82556400A83CC6 /* NotificationButton.swift in Sources */,

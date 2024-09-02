@@ -8,29 +8,31 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    
+    // MARK: - Properties
+    let profile: Profile
+    let count = 3
     //MARK: - Views
-    private lazy var whiteView = UIView()
-    private lazy var headerStack = UIStackView()
-    private lazy var avatarImageView = UIImageView()
-    private lazy var nameLabel = UILabel()
-    private lazy var addressLabel = UILabel()
-    private lazy var notificationButton = NotificationButton()
-    private lazy var dateLabel = UILabel()
-    private lazy var companyMessageButton = UIButton()
-    private lazy var rentButton = BillButton()
-    private lazy var utilityButton = BillButton()
-    private lazy var camsButton = SquareButton()
-    private lazy var barrierButton = SquareButton()
-    private lazy var proposalButton = SquareButton()
-    private lazy var allServicesButton = RozentalButton()
+    let whiteView = UIView()
+    let headerStack = UIStackView()
+    let avatarImageView = UIImageView()
+    let nameLabel = UILabel()
+    let addressLabel = UILabel()
+    let notificationButton = NotificationButton()
+    let dateLabel = UILabel()
+    let companyMessageButton = UIButton()
+    let rentButton = BillButton()
+    let utilityButton = BillButton()
+    let camsButton = SquareButton()
+    let barrierButton = SquareButton()
+    let proposalButton = SquareButton()
+    let allServicesButton = RozentalButton()
     
-    private lazy var servicesCollection: UICollectionView = {
+    let servicesCollection: UICollectionView = {
         var layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.headerReferenceSize = .zero
         layout.minimumLineSpacing = 10
-        layout.itemSize = .init(width: 290, height: 80)
+        layout.itemSize = .init(width: 290, height: 90)
         layout.sectionInset = UIEdgeInsets(
             top: 0,
             left: 10,
@@ -41,9 +43,15 @@ class MainViewController: UIViewController {
         collection.showsHorizontalScrollIndicator = false
         return collection
     }()
+    //    MARK: - Initializers
+    init(profile: Profile) {
+        self.profile = profile
+        super.init(nibName: nil, bundle: nil)
+    }
     
-    let count = 3
-    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +59,7 @@ class MainViewController: UIViewController {
         setupUI()
     }
 }
-
-// MARK: - Layot
+    // MARK: - Layot
 extension MainViewController {
     func setupUI() {
         setupWhiteView()
@@ -102,9 +109,20 @@ extension MainViewController {
         ])
     }
     private func setupAvatarImageView() {
-        let image = UIImage(systemName: "person.circle.fill")
-        avatarImageView.image = image
-        avatarImageView.tintColor = AppColors.white
+        let stringUrl = profile.photo
+        guard let imageURL = URL(string: stringUrl) else { return }
+        URLSession.shared.dataTask(with: imageURL) { [weak self] data, _, error in
+            guard let self = self, let data = data, let photo = UIImage(data: data), error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            DispatchQueue.main.async {
+                self.avatarImageView.image = photo
+            }
+        }.resume()
+        
+        avatarImageView.layer.cornerRadius = 25
+        avatarImageView.layer.masksToBounds = true
         avatarImageView.contentMode = .scaleAspectFit
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -116,9 +134,9 @@ extension MainViewController {
         ])
     }
     private func setupNameLabel() {
-        nameLabel.text = "Name Lastname"
+        nameLabel.text = profile.name
         nameLabel.textColor = AppColors.white
-        nameLabel.font = .boldSystemFont(ofSize: 24)
+        nameLabel.font = .boldSystemFont(ofSize: 18)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -127,9 +145,9 @@ extension MainViewController {
         ])
     }
     private func setupAddressLabel() {
-        addressLabel.text = "Address label"
+        addressLabel.text = profile.address
         addressLabel.textColor = AppColors.white
-        addressLabel.font = .systemFont(ofSize: 16)
+        addressLabel.font = .systemFont(ofSize: 14)
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -138,7 +156,7 @@ extension MainViewController {
         ])
     }
     private func setupNotificationButton() {
-        notificationButton.setCount(count: 5)
+        notificationButton.setCount(count: profile.notification)
         notificationButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -148,12 +166,12 @@ extension MainViewController {
     }
     private func setupDateLabel() {
         whiteView.addSubview(dateLabel)
-        let date = "12 Апреля"
+        let date = profile.date
         let attributedString = NSMutableAttributedString(string: "Сегодня \(date)")
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppColors.black, range: NSRange(location: 0, length: 7))
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppColors.gray, range: NSRange(location: 8, length: date.count ))
         dateLabel.attributedText = attributedString
-        dateLabel.font = .boldSystemFont(ofSize: 30)
+        dateLabel.font = .boldSystemFont(ofSize: 24)
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -163,8 +181,7 @@ extension MainViewController {
     }
     private func setuoCompanyMessageLabel() {
         whiteView.addSubview(companyMessageButton)
-        let count: Int = count
-        companyMessageButton.setTitle("\(count) Сообщения от УК", for: .normal)
+        companyMessageButton.setTitle("5 Сообщений от УК", for: .normal)
         companyMessageButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
         companyMessageButton.setTitleColor(AppColors.black, for: .normal)
         companyMessageButton.backgroundColor = AppColors.white
@@ -178,7 +195,6 @@ extension MainViewController {
         companyMessageButton.addSubview(redPoint)
         redPoint.image = UIImage(systemName: "circlebadge.fill")
         redPoint.tintColor = AppColors.red
-        redPoint.isHidden = count > 0 ? false : true
         redPoint.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -228,7 +244,7 @@ extension MainViewController {
             servicesCollection.topAnchor.constraint(equalTo: utilityButton.bottomAnchor, constant: 8),
             servicesCollection.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
             servicesCollection.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor),
-            servicesCollection.heightAnchor.constraint(equalToConstant: 90)
+            servicesCollection.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     private func setupBarrierButton() {
@@ -285,16 +301,14 @@ extension MainViewController {
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+        profile.banners.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionCell", for: indexPath) as! ServiceCollectionCell
+        let item = profile.banners[indexPath.row]
+        cell.configure(text: item.title, description: item.text, photoUrl: item.image)
         return cell
     }
-}
-
-#Preview {
-    MainViewController()
 }

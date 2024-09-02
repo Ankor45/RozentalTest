@@ -163,9 +163,11 @@ class BillButton: UIButton {
         case .rent:
             typeLabel.text = "Кварплата"
             pictureView.image = UIImage(resource: .billIco)
+            dueDateLabel.text = "Оплатить до 20 Сентября"
             setupSumLabel()
         case .utility:
             typeLabel.text = "Показания счетчиков"
+            dueDateLabel.text = "Отправить до 20 Сентября"
             pictureView.image = UIImage(resource: .utilityIco)
             setupCountersView()
         }

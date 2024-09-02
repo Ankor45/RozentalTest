@@ -14,7 +14,6 @@ enum SquareButtonType {
 }
 
 class SquareButton: UIButton {
-    
     private let pictureView = UIImageView()
     private let typeLabel = UILabel()
     private let button = UIButton()
@@ -42,7 +41,6 @@ class SquareButton: UIButton {
         setupPictureView()
         setupTypeLabel()
     }
-    
     private func setupBackground() {
         backgroundColor = AppColors.lightGray
         layer.cornerRadius = 12

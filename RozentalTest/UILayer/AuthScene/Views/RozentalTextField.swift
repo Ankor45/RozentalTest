@@ -63,7 +63,7 @@ class RozentalTextField: UITextField {
         ])
     }
     
-    func setupTextField() {
+    private func setupTextField() {
         self.layer.cornerRadius = 12
         self.backgroundColor = AppColors.white
         self.layer.borderColor = CGColor(gray: 0.5, alpha: 0.5)
@@ -71,7 +71,6 @@ class RozentalTextField: UITextField {
         self.font = .systemFont(ofSize: 18)
        
     }
-    
     private func setupPlaceholderStyle(style: TextFieldStyle) {
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: self.frame.height))
         let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: self.frame.height))

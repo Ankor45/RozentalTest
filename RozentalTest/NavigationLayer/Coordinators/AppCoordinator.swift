@@ -13,9 +13,7 @@ class AppCoordinator: Coordinator, TabBarCoordinator {
     
     override func start() {
         showAuthFlow()
-//        showMainFlow()
     }
-    
 }
 
 // MARK: - Navigation methods
@@ -68,9 +66,7 @@ private extension AppCoordinator {
         transition.type = .fade
         self.window?.layer.add(transition, forKey: kCATransition)
         self.window?.rootViewController = self.tabBarController
-
     }
-    
     func showAuthFlow() {
         guard let navigationController = navigationController else { return }
         let loginCoordinator = LoginCoordinator(typs: .login, navigationController: navigationController,finishDelegate: self)
@@ -84,9 +80,7 @@ extension AppCoordinator: CoordinatorFinishDelegate {
 
         switch childCoordinator.type {
         case .login:
-          
             showMainFlow()
-            
             navigationController?.viewControllers = [navigationController?.viewControllers.last ?? UIViewController()]
         case .app:
             return

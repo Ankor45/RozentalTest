@@ -245,18 +245,16 @@ extension LoginViewController: LoginViewInput {
         loaderContainer.isHidden = false
         loader.startAnimating()
     }
-    
     func stopLoader() {
         loaderContainer.isHidden = true
         loader.stopAnimating()
     }
-    
     func onSignInTapped() {
         switch state {
         case .initial:
             viewOutput?.goToSignIn()
         case .signIn:
-            viewOutput.loginStart()
+            viewOutput.loginStart(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
         }
     }
 }

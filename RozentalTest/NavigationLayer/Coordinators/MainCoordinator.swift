@@ -8,8 +8,10 @@
 import UIKit
 
 class MainCoordinator: Coordinator {
+    private let userStorage = UserStorage.shared
     
     override func start() {
+        
         showMainScene()
     }
     
@@ -21,7 +23,12 @@ class MainCoordinator: Coordinator {
 extension MainCoordinator {
     func showMainScene() {
         guard let navigationController = navigationController else { return }
-        let controller = MainViewController()
-        navigationController.pushViewController(controller, animated: true)
+        if let data = userStorage.saveData {
+            do {
+                let profile = try? JSONDecoder().decode(Profile.self, from: data)
+                let controller = MainViewController(profile: profile!)
+                navigationController.pushViewController(controller, animated: true)
+            }
+        }
     }
 }
